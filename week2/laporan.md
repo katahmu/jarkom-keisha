@@ -15,10 +15,10 @@ Menggunakan filter http untuk menampilkan paket HTTP.
 Setelah filter digunakan, terlihat paket dari website yang tadi dibuka.
 
 Pada percobaan pertama muncul status **200 OK**. Artinya server berhasil mengirim halaman web ke browser.
-![p4](assets/p4.png)
+![p5](assets/p5.png)
 
 Ketika halaman dibuka lagi, muncul status **304 Not Modified**. Ini terjadi karena halaman sudah tersimpan di cache browser, jadi server tidak mengirim ulang file tersebut.
-![p5](assets/p5.png)
+![p4](assets/p4.png)
 
 
 Kesimpulan
