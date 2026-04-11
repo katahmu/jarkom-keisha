@@ -30,9 +30,8 @@ nslookup www.mit.edu
 
 ```bash
 nslookup -type=NS mit.edu
-![nslookup IP](assets/asset1.png)
 ```
-
+![nslookup IP](assets/asset1.png)
 
 ---
 
