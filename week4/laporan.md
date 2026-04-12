@@ -44,30 +44,67 @@ nslookup www.aiit.or.kr bitsy.mit.edu
 
 ---
 ### Analisa
-web asia(tokyo)
+
+#### 1. Web Asia (Tokyo)
+
 ```bash
 nslookup -type=NS www.u-tokyo.ac.jp
 ```
+
 ![web asia](assets/asset2.png)
 
+Hasil:
+Server DNS untuk domain tersebut adalah:
+- dns1.nc.u-tokyo.ac.jp  
 
-web eropa (sweden)
+---
+
+#### 2. Web Eropa (Sweden)
+
 ```bash
 nslookup -type=NS www.kth.se
 ```
+
 ![web eropa](assets/asset3.png)
 
-Yahoo (query refused)
+Hasil:
+Server DNS otoritatif:
+- a.ns.kth.se  
+
+---
+
+#### 3. Server Email Yahoo Mail
+
+Percobaan menggunakan DNS dari Sweden:
+
 ```bash
 nslookup -type=MX yahoo.com a.ns.kth.se
 ```
-![web eropa](assets/asset4.png)
 
-Yahoo
+![query refused](assets/asset4.png)
+
+Hasil:
+Query ditolak (**query refused**) karena server DNS tersebut tidak melayani permintaan dari luar domainnya.
+
+---
+
+Percobaan menggunakan DNS default:
+
 ```bash
 nslookup -type=MX yahoo.com
 ```
-![web eropa](assets/asset5.png)
+
+![yahoo mx](assets/asset5.png)
+
+Hasil:
+Mail server Yahoo:
+- mta5.am0.yahoodns.net  
+- mta6.am0.yahoodns.net  
+- mta7.am0.yahoodns.net  
+
+Salah satu alamat IP server email Yahoo:
+- **98.136.96.74** (contoh hasil lookup)
+
 ---
 
 ## 4.3 Ipconfig
