@@ -43,6 +43,32 @@ nslookup www.aiit.or.kr bitsy.mit.edu
 ![nslookup IP](assets/asset1.png)
 
 ---
+### Analisa
+web asia(tokyo)
+```bash
+nslookup -type=NS www.u-tokyo.ac.jp
+```
+![web asia](assets/asset2.png)
+
+
+web eropa (sweden)
+```bash
+nslookup -type=NS www.kth.se
+```
+![web eropa](assets/asset3.png)
+
+Yahoo (query refused)
+```bash
+nslookup -type=MX yahoo.com a.ns.kth.se
+```
+![web eropa](assets/asset4.png)
+
+Yahoo
+```bash
+nslookup -type=MX yahoo.com
+```
+![web eropa](assets/asset5.png)
+---
 
 ## 4.3 Ipconfig
 
