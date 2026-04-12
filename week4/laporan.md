@@ -208,3 +208,206 @@ nslookup www.aiit.or.kr bitsy.mit.edu
 ![nslookup custom wireshark](assets/asset13.png)
 
 ---
+---
+
+### Analisa 4.4.1
+
+#### 1. Apakah DNS menggunakan UDP atau TCP?
+
+DNS menggunakan **UDP**, terlihat pada detail paket:
+User Datagram Protocol (UDP)
+
+---
+
+#### 2. Port tujuan dan port sumber
+
+- Port tujuan: **53**  
+- Port sumber: **random** (contoh: 51329 / 64607)
+
+---
+
+#### 3. Alamat IP tujuan DNS
+
+- IP tujuan DNS: **192.168.18.1**  
+- IP DNS lokal (ipconfig): **192.168.18.1**
+
+Kesimpulan:  
+Keduanya sama, berarti request dikirim ke DNS server lokal.
+
+---
+
+#### 4. Type DNS request
+
+Type yang digunakan:
+- **A** (IPv4)  
+- **AAAA** (IPv6)
+
+Apakah ada answer di request?  
+Tidak ada, karena ini hanya query.
+
+---
+
+#### 5. Jumlah dan isi DNS response
+
+Response berisi beberapa jawaban:
+
+- A record: **104.16.45.99**  
+- A record: **104.16.44.99**  
+- AAAA record: **2606:4700:6810:...**
+
+Kesimpulan:  
+DNS response berisi beberapa alamat IP dari domain.
+
+---
+
+#### 6. Apakah IP TCP SYN sesuai dengan DNS?
+
+Ya, sesuai.  
+Setelah DNS response, host mengirim TCP SYN ke IP hasil DNS tersebut.
+
+---
+
+#### 7. Apakah perlu DNS request ulang untuk setiap gambar?
+
+Tidak perlu.  
+
+Karena DNS menggunakan cache, sehingga IP bisa dipakai ulang.
+
+---
+
+### Analisa 4.4.2
+
+#### 1. Port tujuan dan port sumber
+
+- Port tujuan: **53**  
+- Port sumber pada balasan: **53**
+
+---
+
+#### 2. Alamat IP tujuan DNS
+
+Pesan permintaan DNS dikirim ke:
+- **fe80::1** (IPv6 DNS lokal)
+
+Kesimpulan:  
+Ya, alamat tersebut merupakan **default DNS server lokal**.
+
+---
+
+#### 3. Type DNS request
+
+Type yang digunakan:
+- **A** (IPv4)
+- **AAAA** (IPv6)
+
+Apakah ada answer di request?  
+Tidak ada, karena ini hanya permintaan (query).
+
+---
+
+#### 4. Jumlah dan isi DNS response
+
+Terdapat beberapa jawaban (answers), yaitu:
+
+- CNAME: **www.mit.edu.edgekey.net**  
+- CNAME: **e9566.dscb.akamaiedge.net**  
+- A / AAAA record: alamat IP dari server tujuan  
+
+Kesimpulan:  
+DNS response berisi beberapa record (CNAME dan IP address).
+
+---
+
+#### 5. Hasil tangkapan layar
+
+![nslookup wireshark](assets/asset11.png)
+
+---
+
+### Analisa 4.4.3
+
+#### 1. Alamat IP tujuan DNS
+
+Pesan permintaan DNS dikirim ke:
+- **fe80::1**
+
+Kesimpulan:  
+Ya, alamat tersebut merupakan **default DNS server lokal**.
+
+---
+
+#### 2. Type DNS request
+
+Type yang digunakan:
+- **NS** (Name Server)
+
+Apakah ada answer di request?  
+ Tidak ada, karena ini hanya permintaan (query).
+
+---
+
+#### 3. Hasil DNS response
+
+Server MIT yang ditemukan:
+
+- **use5.akam.net**  
+- **eur5.akam.net**  
+- (dan server lain dari Akamai)
+
+Apakah ada alamat IP?  
+ Ya, response juga menyertakan alamat IP dari server tersebut.
+
+Kesimpulan:  
+DNS response berisi daftar **name server (NS)** dan juga IP address-nya.
+
+---
+
+#### 4. Hasil tangkapan layar
+
+![nslookup ns wireshark](assets/asset12.png)
+
+---
+
+### Analisa 4.4.4
+
+#### 1. Alamat IP tujuan DNS
+
+Pesan permintaan DNS dikirim ke:
+- **bitsy.mit.edu** (server DNS yang ditentukan)
+
+Kesimpulan:  
+Alamat ini **bukan default DNS lokal**, karena kita secara manual menentukan server DNS tujuan.
+
+---
+
+#### 2. Type DNS request
+
+Type yang digunakan:
+- **A** (mencari alamat IPv4)
+
+Apakah ada answer di request?  
+Tidak ada, karena ini hanya permintaan (query).
+
+---
+
+#### 3. Hasil DNS response
+
+Jumlah jawaban:  
+Terdapat beberapa jawaban
+
+Isi jawaban:
+- Alamat IP dari domain **www.aiit.or.kr**
+- Bisa berupa:
+  - A record (IPv4)
+  - atau tambahan record lain (tergantung hasil)
+
+Kesimpulan:  
+DNS response berisi alamat IP dari domain yang diminta.
+
+---
+
+#### 4. Hasil tangkapan layar
+
+![nslookup custom wireshark](assets/asset13.png)
+
+---
