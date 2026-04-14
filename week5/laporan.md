@@ -1,4 +1,4 @@
-# Analisis Protokol HTTP - Wireshark
+# UDP
 
 ## Identitas
 
@@ -9,7 +9,7 @@ Kelas: IF-04-01
 ---
 
 ## Tujuan
-Tujuan dari praktikum ini adalah untuk:
+Tujuan Praktikum:
 
 Memahami cara kerja protokol UDP (User Datagram Protocol)
 Menganalisis struktur paket UDP menggunakan Wireshark
