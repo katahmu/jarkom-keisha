@@ -130,3 +130,7 @@ Paket kedua adalah response dari paket pertama
 
 ## Kesimpulan
 
+UDP (User Datagram Protocol) merupakan protokol pada layer transport yang bersifat connectionless dan tidak memiliki mekanisme kontrol seperti pada TCP, sehingga tidak menjamin keandalan pengiriman data. Namun, karena strukturnya yang sederhana, UDP memiliki keunggulan dalam kecepatan dan efisiensi.
+Header UDP terdiri dari empat field utama yaitu Source Port, Destination Port, Length, dan Checksum dengan total panjang 8 byte. Field Length menunjukkan total panjang paket UDP yang mencakup header dan payload.
+Berdasarkan hasil analisis menggunakan Wireshark, dapat diamati bahwa komunikasi UDP berlangsung tanpa proses handshake, serta pasangan paket dapat diidentifikasi melalui pertukaran port dan alamat IP antara pengirim dan penerima.
+UDP banyak digunakan pada aplikasi yang membutuhkan kecepatan tinggi dan toleran terhadap kehilangan data, seperti DNS, streaming, dan game online.
