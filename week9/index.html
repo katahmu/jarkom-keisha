@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAINBOW MODE</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', sans-serif;
+            color: white;
+            background: linear-gradient(270deg, red, orange, yellow, green, cyan, blue, violet);
+            background-size: 1400% 1400%;
+            animation: rainbowBG 10s ease infinite;
+        }
+
+        @keyframes rainbowBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .card {
+            padding: 40px 60px;
+            border-radius: 20px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 20px #fff, 0 0 40px cyan, 0 0 60px magenta;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 10px red, 0 0 20px orange, 0 0 30px yellow;
+            }
+
+            to {
+                box-shadow: 0 0 20px cyan, 0 0 40px blue, 0 0 60px violet;
+            }
+        }
+
+        h1 {
+            font-size: 3rem;
+            background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet);
+            background-size: 400%;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: textRainbow 3s linear infinite;
+        }
+
+        @keyframes textRainbow {
+            0% {
+                background-position: 0%;
+            }
+
+            100% {
+                background-position: 400%;
+            }
+        }
+
+        /* FLASH BUTTON */
+        .btn {
+            margin-top: 20px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            background: linear-gradient(90deg, hotpink, cyan, yellow);
+            color: black;
+            animation: btnFlash 1s infinite alternate;
+            transition: transform 0.2s;
+        }
+
+        @keyframes btnFlash {
+            from {
+                box-shadow: 0 0 10px hotpink;
+            }
+
+            to {
+                box-shadow: 0 0 30px cyan, 0 0 50px yellow;
+            }
+        }
+
+        .btn:hover {
+            transform: scale(1.15) rotate(3deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h1> HELLO WORLD </h1>
+        <button class="btn" onclick="alert('AAAAAAAAAAAAAAAA')">
+            CLICK ME
+        </button>
+    </div>
+</body>
+
+</html>
