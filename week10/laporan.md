@@ -48,6 +48,8 @@ Melalui Wireshark dapat diamati adanya field Fragment Offset dan More Fragments 
 Pada hasil pengamatan ditemukan paket IPv6 yang menggunakan alamat 128-bit. IPv6 menyediakan ruang alamat yang jauh lebih besar dibandingkan IPv4 sehingga dapat mengatasi keterbatasan jumlah alamat IP.
 
 Header IPv6 memiliki struktur yang lebih sederhana dibandingkan IPv4 dan tidak menggunakan checksum pada header. Selain itu proses fragmentasi pada IPv6 hanya dapat dilakukan oleh host pengirim, bukan oleh router di tengah jaringan.
+![1](assets/asset1.png)
+![2](assets/asset2.png)
 
 ---
 
