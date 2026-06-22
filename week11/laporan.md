@@ -34,8 +34,8 @@ Menjalankan perintah:
 
 ```cmd
 ipconfig /release
-![ipconfig /release](assets/asset1.png)
 ```
+![ipconfig /release](assets/asset1.png)
 
 untuk melepaskan alamat IP yang sedang digunakan.
 
@@ -43,9 +43,9 @@ Menjalankan perintah:
 
 ```cmd
 ipconfig /renew
-![ipconfig /renew](assets/asset2.png)
 
 ```
+![ipconfig /renew](assets/asset2.png)
 
 untuk meminta alamat IP baru dari DHCP Server.
 
@@ -55,9 +55,9 @@ Menggunakan filter:
 
 ```text
 dhcp
-![ipconfig /release](assets/asset3.png)
 
 ```
+![hasil](assets/asset3.png)
 
 untuk menampilkan paket DHCP saja.
 
