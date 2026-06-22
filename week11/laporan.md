@@ -2,9 +2,10 @@
 
 ## Identitas
 
-Nama: Keisha Hananta
-NIM: 103072400149
-Kelas: IF-04-01
+Nama: Keisha Hananta  
+NIM: 103072400149  
+Kelas: IF-04-01  
+
 
 ---
 
