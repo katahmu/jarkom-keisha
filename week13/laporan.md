@@ -136,7 +136,7 @@ Pesan yang dikirim adalah:
 ```text
 Who has 10.10.11.191? Tell 10.10.10.1
 ```
-
+![Who has...](assets/asset4.png)
 Paket ini dikirim oleh gateway untuk mengetahui alamat MAC dari perangkat dengan alamat IP 10.10.11.191.
 
 Karena alamat MAC tujuan belum diketahui, bagian Target MAC Address masih bernilai 00:00:00:00:00:00.
@@ -158,6 +158,7 @@ Pesan yang dikirim adalah:
 ```text
 10.10.11.191 is at 74:97:79:c4:4c:d3
 ```
+![...is at....](assets/asset5.png)
 
 Paket ini merupakan balasan dari perangkat yang memiliki alamat IP 10.10.11.191 untuk memberitahukan alamat MAC miliknya kepada gateway.
 
